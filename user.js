@@ -7,8 +7,14 @@ class User {
     this.password = password;
     this.info = this.info.bind(this);
   }
+
+  //es6在原型上定义方法不可以被遍历,不可以被枚举
+  info() {
+
+  }
 }
 
+//ES5 这种方式在原型上定义方法可以被遍历
 User.prototype.get = function () {
 
 };
