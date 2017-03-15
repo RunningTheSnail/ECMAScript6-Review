@@ -32,7 +32,7 @@ console.log(foo.prototype);
 
 var bar = new Bar();
 
-//对象只有__proto__属性  指向父类的原型对象
+//对象只有__proto__属性  指向该类的原型对象
 console.log(bar.__proto__ === Bar.prototype);
 
 console.log(Bar.__proto__ == Foo);
