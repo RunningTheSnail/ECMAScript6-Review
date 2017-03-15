@@ -19,21 +19,32 @@ User.prototype.get = function () {
 
 };
 
+//批量定义原型方法
 Object.assign(User.prototype, {
   info(){
     console.log(this.username + "---" + this.password);
   }
 });
 
-// console.log(User === User.prototype.constructor);
+console.log(User === User.prototype.constructor);
+
 
 var properties = Object.keys(User.prototype);
 
+var propertyNames = Object.getOwnPropertyNames(User.prototype);
+
+for (let property in propertyNames) {
+  console.log("属性:" + propertyNames[property]);
+}
+
 for (var i = 0; i < properties.length; i++) {
-  console.log(properties[i]);
+  console.log("原型包含的属性" + properties[i]);
 }
 
 var user = new User("jerry", "jerry");
+
+//instanceof 检测constructor.prototype 是否在object 的原型链上
+console.log("instanceof:" + (user instanceof User));
 
 // user.info();
 
