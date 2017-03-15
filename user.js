@@ -12,6 +12,10 @@ class User {
   info() {
 
   }
+
+  set(){
+
+  }
 }
 
 //ES5 这种方式在原型上定义方法可以被遍历
@@ -45,6 +49,8 @@ var user = new User("jerry", "jerry");
 
 //instanceof 检测constructor.prototype 是否在object 的原型链上
 console.log("instanceof:" + (user instanceof User));
+
+console.log("判断:" + user.hasOwnProperty('set'));
 
 // user.info();
 
