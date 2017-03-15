@@ -3,10 +3,16 @@
  */
 
 class Foo {
-
+  get() {
+    console.log("HelloWorld extends class");
+  }
 }
 
 class Bar extends Foo {
+
+}
+
+class Def {
 
 }
 
@@ -36,3 +42,13 @@ var bar = new Bar();
 console.log(bar.__proto__ === Bar.prototype);
 
 console.log(Bar.__proto__ == Foo);
+
+Def.__proto__ = Foo;
+
+Def.prototype.__proto__ = Foo.prototype;
+
+var def = new Def();
+
+def.get();
+
+console.log(Function.__proto__);

@@ -5,15 +5,15 @@ class User {
   constructor(username, password) {
     this.username = username;
     this.password = password;
-    this.info = this.info.bind(this);
+    // this.info = this.info.bind(this);
   }
 
   //es6在原型上定义方法不可以被遍历,不可以被枚举
   info() {
-
+    console.log("info");
   }
 
-  set(){
+  set() {
 
   }
 }
@@ -56,7 +56,7 @@ console.log("判断:" + user.hasOwnProperty('set'));
 
 const {info}=user;
 
-// info();
+info.bind(user)();
 
 
 class A {
@@ -84,4 +84,4 @@ Array.prototype.empty = function () {
 
 var a = new MyArray();
 // a.push("jerry");
-console.log(a.empty());
+// console.log(a.empty());
