@@ -6,5 +6,3 @@ var d = 3;
 export default function () {
   
 }
-
-export default d;
