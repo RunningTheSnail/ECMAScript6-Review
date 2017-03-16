@@ -9,6 +9,10 @@ export var get = function () {
 
 };
 
+export default function () {
+  console.log('default');
+}
+
 class A {
   set() {
     console.log('set');

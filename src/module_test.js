@@ -1,10 +1,14 @@
 /**
  * Created by toonew on 2017/3/15.
  */
-import {m, A} from './module'
+import * as module from './module'
 
-console.log(m);
+import def from './module';
 
-var a = new A();
+console.log(module.m);
+
+var a = new module.A();
 
 a.set();
+
+def();
