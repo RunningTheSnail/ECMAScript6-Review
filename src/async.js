@@ -24,6 +24,7 @@ var readFile = function (fileName) {
 };
 
 //async return promise
+
 var asyncReadFile = async function () {
   return await readFile(__filename);
 };
