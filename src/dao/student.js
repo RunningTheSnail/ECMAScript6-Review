@@ -32,9 +32,15 @@ Student.findOne()
       console.log(data);
     });
 
-Student
-    .find({age: {$gt: 25, $lte: 30}})
-    .count()
+// Student
+//     .find({age: {$gt: 25, $lte: 30}})
+//     .count()
+//     .then(function (data) {
+//       console.log(data);
+//     });
+
+Student.find({})
+    .where('age').gt(25).lte(30)
     .then(function (data) {
       console.log(data);
     });
