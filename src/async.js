@@ -1,6 +1,8 @@
 /**
  * Created by toonew on 2017/3/16.
  */
+
+
 import 'babel-polyfill';
 
 var fs = require('fs');
@@ -31,8 +33,31 @@ var asyncReadFile = async function () {
 
 asyncReadFile()
     .then(function (result) {
-      console.log(result);
+      // console.log(result);
     })
     .catch(function (error) {
       console.log(error);
+    });
+
+var get = async function () {
+  var r1 = delay(1000);
+  var r2 = delay(3000);
+  return await Promise.race([r1, r2]);
+};
+
+function delay(time) {
+
+  return new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      resolve('delay:' + time);
+    }, time);
+  });
+}
+
+get()
+    .then(function (data) {
+      console.log(data);
+    })
+    .catch(function (error) {
+      console.log(error)
     });
